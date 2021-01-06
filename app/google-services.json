@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "107313362118",
+    "firebase_url": "https://expirationdatetracker.firebaseio.com",
+    "project_id": "expirationdatetracker",
+    "storage_bucket": "expirationdatetracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107313362118:android:6ee4771589c320e49753c7",
+        "android_client_info": {
+          "package_name": "com.ahmetertok.expirationDateTracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107313362118-a00qo3g8kregnc88q5mfke5107ah38tk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN80AvpcNTrVwm3aTG-52SKyx0ywvOLiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107313362118-a00qo3g8kregnc88q5mfke5107ah38tk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
