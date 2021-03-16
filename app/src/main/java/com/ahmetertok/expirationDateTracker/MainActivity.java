@@ -36,20 +36,34 @@ private ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        if (firebaseUser != null){
 
-        register = findViewById(R.id.register);
-        register.setOnClickListener(this);
+           openProfile();
 
-        singIn = (Button)findViewById(R.id.login);
-        singIn.setOnClickListener(this);
+        }
+        else {
+            setContentView(R.layout.activity_main);
+            register = findViewById(R.id.register);
+            register.setOnClickListener(this);
 
-        editTextPassword=(EditText)findViewById(R.id.password);
-        editTextEmail=(EditText)findViewById(R.id.email);
+            singIn = (Button)findViewById(R.id.login);
+            singIn.setOnClickListener(this);
 
-        progressBar=(ProgressBar)findViewById(R.id.progressBar);
+            editTextPassword=(EditText)findViewById(R.id.password);
+            editTextEmail=(EditText)findViewById(R.id.email);
 
-        mAuth = FirebaseAuth.getInstance();
+            progressBar=(ProgressBar)findViewById(R.id.progressBar);
+
+            mAuth = FirebaseAuth.getInstance();
+        }
+
+
+
+
+
+
 
 
     }
@@ -105,6 +119,7 @@ private ProgressBar progressBar;
 
                     if (user.isEmailVerified()){
                         startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                        openProfile();
                     }
                     else{
                         user.sendEmailVerification();
@@ -125,5 +140,9 @@ private ProgressBar progressBar;
         });
 
 
+    }
+
+    public void openProfile() {
+        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
     }
 }
